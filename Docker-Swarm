@@ -1,0 +1,50 @@
+version: "3.9"
+
+services:
+  <service_name>:
+    image: <image>
+    
+    ports:
+      - "<host_port>:<container_port>"
+      
+    secrets:
+      - source: <secret named in swarm>
+        target: <secret named inside the container>
+   
+        
+    environment:
+      POSTGRES_USER: <username>
+      POSTGRES_DB_PASSWORD_FILE: /run/secrets/<container_secret_name>
+      
+    deploy:
+      update_config:
+        failure_action: rollback 
+        parallelism: 2
+   
+      placement:
+        constraints:
+          - <node.constraint> 
+      
+      replicas: 2
+      
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+        
+    networks:
+      - <network_name>
+      
+    
+
+networks:
+  <network_name>:
+    driver: overlay
+    driver_opts:
+      encrypted: "true" 
+
+secrets:
+  <secret_name>:
+    external: true
+  
