@@ -1,0 +1,25 @@
+
+---
+
+## 🛠 Requirements
+
+- Docker Engine
+- Docker Swarm initialized
+- Secret created in Swarm before deployment
+
+---
+##  Docker Swarm Initializiation 
+
+docker swarm init <advertise-ip> <listening-ip>
+docker swarm join-token worker 
+docker swarm join-token manager 
+
+##  Secrets
+
+This stack uses **Docker Swarm Secrets**.
+
+Create the secret first:
+
+docker secret create <swarm_secret_name> <secret_file>
+
+
