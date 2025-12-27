@@ -9,13 +9,13 @@
 
 ---
 ##  Docker Swarm Initializiation 
+initialize docker swarm :
 
 docker swarm init <advertise-ip> <listening-ip>
 docker swarm join-token <node-type> 
 
+---
 ##  Secrets
-
-This stack uses **Docker Swarm Secrets**.
 
 Create the secret first:
 
