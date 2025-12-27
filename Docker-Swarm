@@ -19,13 +19,13 @@ services:
     deploy:
       update_config:
         failure_action: rollback 
-        parallelism: 2
+        parallelism: <parallelism>
    
       placement:
         constraints:
           - <node.constraint> 
       
-      replicas: 2
+      replicas: <replicas>
       
       restart_policy:
         condition: on-failure
@@ -36,8 +36,7 @@ services:
     networks:
       - <network_name>
       
-    
-
+  
 networks:
   <network_name>:
     driver: overlay
