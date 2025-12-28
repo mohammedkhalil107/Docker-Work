@@ -21,8 +21,7 @@ Create the secret first:
 
 docker secret create <swarm_secret_name> <secret_file>
 
-Deploy the stack:
-docker stack deploy -c <filename>.yml <stack_name>
+
 
 
 
