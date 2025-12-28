@@ -23,7 +23,7 @@ services:
    
       placement:
         constraints:
-          - <node.constraint> 
+          - " <node.constraint> " 
       
       replicas: <replicas>
       
