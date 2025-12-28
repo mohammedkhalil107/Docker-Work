@@ -1,7 +1,7 @@
 
 ---
 
-## 🛠 Requirements
+## Requirements
 
 - Docker Engine
 - Docker Swarm initialized
