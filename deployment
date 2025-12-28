@@ -1,0 +1,2 @@
+Deploy the stack:
+docker stack deploy -c <filename>.yml <stack_name>
